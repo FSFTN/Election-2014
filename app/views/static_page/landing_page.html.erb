@@ -4,9 +4,15 @@
 			<div class="well well-sm">
 				<legend class="text-center">Search for candidates based on their constituencies</legend>
 				<%= simple_form_for :search, :url => search_path, :method=> "get" do |f| %>
+				<div class="field">
 				<%= f.collection_select :state_id, State.order(:name),  :id, :name, {:include_blank=> "Select a State"}, {:class=>'dropdown'} %>
+				</div>
+				<div class="field">
 				<%= f.grouped_collection_select :constituency_id, State.order(:name), :constituencies, :name, :id, :name, {:include_blank=> "Select a City"}, {:class=>'dropdown'} %>
+				</div>
+				<div class="field">
 				<%= f.submit "Search", class: "btn btn-success form-control control-group"%>
+				</div>
 				<% end %>
 			</div>
 		</div>

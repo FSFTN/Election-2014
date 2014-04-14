@@ -3,9 +3,10 @@ class ConstituenciesController < ApplicationController
 
 	def search_result
 		# nil.test!
-		constituency_id = search_params["candidate_constituencies"]
+		constituency_id = search_params["constituency_id"]
 		constituency = Constituency.find(constituency_id)
 		@candidates = constituency.candidates
+		Rails.logger.info @candidates.inspect
 	end
 
 	# GET /constituencies
@@ -31,15 +32,22 @@ class ConstituenciesController < ApplicationController
 	# POST /constituencies
 	# POST /constituencies.json
 	def create
-		@constituency = Constituency.new(constituency_params)
-
-		respond_to do |format|
-			if @constituency.save
-				format.html { redirect_to @constituency, notice: 'Constituency was successfully created.' }
-				format.json { render :show, status: :created, location: @constituency }
-			else
-				format.html { render :new }
-				format.json { render json: @constituency.errors, status: :unprocessable_entity }
+		state = State.find(constituency_params["state"])
+		if state
+			@constituency = state.constituencies.new(name: constituency_params["name"],wikipedia_link: constituency_params["wikipedia_link"])
+			# nil.test!
+			respond_to do |format|
+				if @constituency.save
+					format.html { redirect_to @constituency, notice: 'Constituency was successfully created.' }
+					format.json { render :show, status: :created, location: @constituency }
+				else
+					format.html { render :new }
+					format.json { render json: @constituency.errors, status: :unprocessable_entity }
+				end
+			end
+		else
+			respond_to do |format|
+				format.html{render json: @constituency.errors, status: :unprocessable_entity}
 			end
 		end
 	end
@@ -62,7 +70,7 @@ class ConstituenciesController < ApplicationController
 	# DELETE /constituencies/1.json
 	def destroy
 		@constituency.destroy
-		respond_to do |format|
+			respond_to do |format|
 			format.html { redirect_to constituencies_url }
 			format.json { head :no_content }
 		end
@@ -76,7 +84,7 @@ class ConstituenciesController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def constituency_params
-		params.require(:constituency).permit(:name, :state_id, :wikipedia_link,:constituency_id)
+		params.require(:constituency).permit(:name, :state_id, :wikipedia_link,:constituency_id,:state)
 	end
 	def search_params
 		params.require(:search).permit(:state_id,:constituency_id)
