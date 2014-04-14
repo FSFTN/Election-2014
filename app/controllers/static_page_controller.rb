@@ -4,4 +4,8 @@ class StaticPageController < ApplicationController
 
   def about
   end
+
+	def get_candidate_data
+		
+	end
 end
