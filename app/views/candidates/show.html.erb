@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @candidate.name %>
+</p>
+
+<p>
+  <strong>Party:</strong>
+  <%= @candidate.party %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @candidate.avatar %>
+</p>
+
+<p>
+  <strong>Wikipedia link:</strong>
+  <%= @candidate.wikipedia_link %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @candidate.age %>
+</p>
+
+<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
+<%= link_to 'Back', candidates_path %>

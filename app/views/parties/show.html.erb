@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @party.name %>
+</p>
+
+<p>
+  <strong>Symbol:</strong>
+  <%= @party.symbol %>
+</p>
+
+<p>
+  <strong>Manifesto:</strong>
+  <%= @party.manifesto %>
+</p>
+
+<p>
+  <strong>Official website:</strong>
+  <%= @party.official_website %>
+</p>
+
+<p>
+  <strong>Wikipedia link:</strong>
+  <%= @party.wikipedia_link %>
+</p>
+
+<p>
+  <strong>President:</strong>
+  <%= @party.president %>
+</p>
+
+<%= link_to 'Edit', edit_party_path(@party) %> |
+<%= link_to 'Back', parties_path %>

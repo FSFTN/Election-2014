@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users
+
+  resources :constituencies
+
+  resources :states
+
+  resources :candidates
+
+  resources :parties
+
+	get 'search' => 'constituencies#search_result'
+
   get 'static_page/landing_page'
 
   get 'static_page/about'
