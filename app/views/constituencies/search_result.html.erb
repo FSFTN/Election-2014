@@ -1,0 +1,38 @@
+<table id= "search_result" class = "table table-hover">
+	<thead>
+		<tr>
+			<th>Candidate Name</th>
+			<th>Candidate Age</th>
+			<th>Party Name</th>
+			<th>Wikipedia link if any</th>
+			<th>Party's Manifesto</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @candidates.each do |candidate| %>
+		<tr>
+			<td>
+				<%= link_to candidate.name, candidate_path(candidate.id) %>
+			</td>
+			<%- if candidate.age %>
+			<td><%= candidate.age%></td>
+			<% else %>
+			<td></td>
+			<% end %>
+			<td><%= candidate.party.name%></td>
+			<%- if candidate.wikipedia_link %>
+			<td><%= candidate.wikipedia_link%></td>
+			<% else %>
+			<td></td>
+			<% end %>
+			<%- if candidate.party.manifesto %>
+			<td><%= candidate.party.manifesto%></td>
+			<% else %>
+			<td></td>
+			<% end %>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+

@@ -3,9 +3,10 @@ class ConstituenciesController < ApplicationController
 
 	def search_result
 		# nil.test!
-		constituency_id = search_params["candidate_constituencies"]
+		constituency_id = search_params["constituency_id"]
 		constituency = Constituency.find(constituency_id)
 		@candidates = constituency.candidates
+		Rails.logger.info @candidates.inspect
 	end
 
 	# GET /constituencies
