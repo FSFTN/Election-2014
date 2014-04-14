@@ -1,0 +1,29 @@
+<h1>Listing constituencies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>State</th>
+      <th>Wikipedia link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @constituencies.each do |constituency| %>
+      <tr>
+        <td><%= constituency.name %></td>
+        <td><%= constituency.state %></td>
+        <td><%= constituency.wikipedia_link %></td>
+        <td><%= link_to 'Show', constituency %></td>
+        <td><%= link_to 'Edit', edit_constituency_path(constituency) %></td>
+        <td><%= link_to 'Destroy', constituency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Constituency', new_constituency_path %>

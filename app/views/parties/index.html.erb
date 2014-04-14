@@ -1,0 +1,35 @@
+<h1>Listing parties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Manifesto</th>
+      <th>Official website</th>
+      <th>Wikipedia link</th>
+      <th>President</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parties.each do |party| %>
+      <tr>
+        <td><%= party.name %></td>
+        <td><%= party.symbol %></td>
+        <td><%= party.manifesto %></td>
+        <td><%= party.official_website %></td>
+        <td><%= party.wikipedia_link %></td>
+        <td><%= party.president %></td>
+        <td><%= link_to 'Show', party %></td>
+        <td><%= link_to 'Edit', edit_party_path(party) %></td>
+        <td><%= link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Party', new_party_path %>

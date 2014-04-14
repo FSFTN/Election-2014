@@ -19,3 +19,6 @@ gem 'spring',        group: :development
 gem 'capistrano'
 
 
+gem 'devise'
+gem "select2-rails"
+gem 'simple_form'
