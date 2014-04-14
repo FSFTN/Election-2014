@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414124518) do
+ActiveRecord::Schema.define(version: 20140414175740) do
 
   create_table "candidates", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140414124518) do
     t.string   "age"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved",       default: true
   end
 
   add_index "candidates", ["party_id"], name: "index_candidates_on_party_id"

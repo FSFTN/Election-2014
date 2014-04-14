@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="well well-sm">
+				<legend class="text-center">Enter the candidate details here, we will review and add it</legend>
+				<%= simple_form_for :candidate, :url => static_page_get_candidate_data_path, :method=> "get" do |f| %>
+				<div class="field">
+					<%= f.input :name%>	
+				</div>
+<div class="field">
+					<%= f.input :age%>	
+				</div>
+<div class="field">
+					<%= f.file_field :avatar%>	
+				</div>
+				<div class="field">
+					<%= f.collection_select :state_id, State.order(:name),  :id, :name, {:include_blank=> "Select a State"}, {:class=>'dropdown'} %>
+				</div>
+				<div class="field">
+					<%= f.grouped_collection_select :constituency_id, State.order(:name), :constituencies, :name, :id, :name, {:include_blank=> "Select a City"}, {:class=>'dropdown'} %>
+				</div>
+	<div class="field">
+					<%= f.collection_select :party, Party.order(:name), :id, :name, {:include_blank=> "Select a Party"}, {:class=>'dropdown'} %>
+				</div>
+
+				<div class="field">
+					<%= f.submit "Search", class: "btn btn-success form-control control-group"%>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
