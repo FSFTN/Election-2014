@@ -10,7 +10,13 @@ namespace :create do
 end
 namespace :constituency do
   task :tn => :environment do
-    file = "db/tamil_nadu.csv"
+    file = "db/constituency/tamil_nadu.csv"
+    CSV.foreach(file, :headers =>true) do |row|
+      Constituency.create!(row.to_hash) 
+    end
+  end
+  task :andhra => :environment do
+    file = "db/constituency/andhra_pradesh.csv"
     CSV.foreach(file, :headers =>true) do |row|
       Constituency.create!(row.to_hash) 
     end
