@@ -5,10 +5,13 @@ jQuery ->
 	constituencies = $("#search_constituency_id").html()
 	console.log(constituencies)
 	$("#search_state_id").change ->
-		state = $("#search_state_id :selected").text
-		options = $(constituencies).filter('optgroup[label="#{state}"').html
+		console.log("test**************************************")
+		state = $("#search_state_id :selected").text()
+		console.log(state)
+		options = $(constituencies).filter("optgroup[label='#{state}']").html()
+		console.log(options)
 		if options
-			$("#search_state_id").html(options)
+			$("#search_constituency_id").html(options)
 		else
-			$("#search_state_id").empty()
+			$("#search_constituency_id").empty()
 
