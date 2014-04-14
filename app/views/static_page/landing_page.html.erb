@@ -2,10 +2,10 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="well well-sm">
-				<legend class="text-center">Search for a lawyer</legend>
-				<%= simple_form_for :search, :url => lawyers_search_result_path, :method=> "post" do |f| %>
-				<%= f.input :city, collection:Lawyer.uniq.pluck(:location),input_html: {class: "form-control chosen-select"}%>
-				<%= f.input :services,collection: Service.all,value_method: :id,label_method: :name,label: "Services",class: "form-control", :input_html => { :multiple => true,class: "form-control chosen-select" }%>
+				<legend class="text-center">Search for candidates based on their constituencies</legend>
+				<%= simple_form_for :search, :url => search_path, :method=> "post" do |f| %>
+				<%= f.collection_select :state_id, State.order(:name),  :id, :name, {:include_blank=> "Select a State"}, {:class=>'dropdown'} %>
+				<%= f.grouped_collection_select :constituency_id, State.order(:name), :constituencies, :name, :id, :name, {:include_blank=> "Select a City"}, {:class=>'dropdown'} %>
 				<%= f.submit "Search", class: "btn btn-success form-control control-group"%>
 				<% end %>
 			</div>
