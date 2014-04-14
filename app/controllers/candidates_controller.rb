@@ -3,7 +3,17 @@ class CandidatesController < ApplicationController
 
 
 	def save_candidate
-
+		party = Party.find(candidate_params["party"])
+		candidate = party.candidates.new(name: candidate_params["name"],age: candidate_params["age"],avatar: candidate_params["avatar"])
+		respond_to do |format|
+			if candidate.save!
+				candidate.constituencies << Constituency.find(candidate_params["constituency_id"])
+				Rails.logger.info "DONE@@@@@@@@@@@@@@@@@@@@@"
+				format.html { redirect_to static_page_get_candidate_data_path, notice: 'Candidate was successfully created.' }
+			else
+				format.html { redirect_to static_page_get_candidate_data_path, notice: 'Candidate was not successfully created.' }
+			end
+		end
 	end
 
 	# GET /candidates
@@ -74,6 +84,6 @@ class CandidatesController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def candidate_params
-		params.require(:candidate).permit(:name, :party_id, :avatar, :wikipedia_link, :age)
+		params.require(:candidate).permit(:name, :party_id, :avatar, :wikipedia_link, :age,:state_id,:constituency_id,:party)
 	end
 end
