@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 	get 'search' => 'constituencies#search_result'
 
   get 'static_page/landing_page'
-
+  get 'add_candidate' => 'static_page#get_candidate_data'
   get 'static_page/about'
 	get 'static_page/get_candidate_data'
 	get "save_candidate" => "candidates#save_candidate"
