@@ -9,6 +9,7 @@ namespace :create do
     end
   end
 end
+
 namespace :constituency do
   desc "create constituency for Tamil Nadu"
   task :tn => :environment do
@@ -44,14 +45,6 @@ namespace :constituency do
 
   desc "create constituency for Bihar"
   task :bihar => :environment do
-    file = "db/constituency/gujarat.csv"
-    CSV.foreach(file, :headers =>true) do |row|
-      Constituency.create!(row.to_hash) 
-    end
-  end
-
-  desc "create constituency for Bihar"
-  task :bihar => :environment do
     file = "db/constituency/bihar.csv"
     CSV.foreach(file, :headers =>true) do |row|
       Constituency.create!(row.to_hash) 
@@ -59,15 +52,7 @@ namespace :constituency do
   end
 
   desc "create Constituency for Arunachal Pradesh"
-  task :bihar => :environment do
-    file = "db/constituency/arunachal_pradesh.csv"
-    CSV.foreach(file, :headers =>true) do |row|
-      Constituency.create!(row.to_hash) 
-    end
-  end
-
-  desc "create Constituency for Arunachal Pradesh"
-  task :bihar => :environment do
+  task :arunachal_pradesh => :environment do
     file = "db/constituency/arunachal_pradesh.csv"
     CSV.foreach(file, :headers =>true) do |row|
       Constituency.create!(row.to_hash) 
@@ -92,7 +77,7 @@ namespace :constituency do
 
   desc "create Constituency for Himachal Pradesh"
   task :himachal_predesh => :environment do
-    file = "db/constituency/haryana.csv"
+    file = "db/constituency/himachal_predesh.csv"
     CSV.foreach(file, :headers =>true) do |row|
       Constituency.create!(row.to_hash) 
     end
@@ -173,14 +158,6 @@ namespace :constituency do
   desc "create Constituency for Orissa"
   task :orissa => :environment do
     file = "db/constituency/orissa.csv"
-    CSV.foreach(file, :headers =>true) do |row|
-      Constituency.create!(row.to_hash) 
-    end
-  end
-
-  desc "create Constituency for Punjab"
-  task :punjab => :environment do
-    file = "db/constituency/punjab.csv"
     CSV.foreach(file, :headers =>true) do |row|
       Constituency.create!(row.to_hash) 
     end
@@ -290,14 +267,6 @@ namespace :constituency do
     end
   end
 
-  desc "create Constituency for Daman and Diu"
-  task :daman_diu => :environment do
-    file = "db/constituency/daman_diu.csv"
-    CSV.foreach(file, :headers =>true) do |row|
-      Constituency.create!(row.to_hash) 
-    end
-  end
-
   desc "create Constituency for nct_of_delhi"
   task :nct_of_delhi => :environment do
     file = "db/constituency/nct_of_delhi.csv"
@@ -322,4 +291,5 @@ namespace :constituency do
     end
   end
 
+  task :all => [:tn, :andra, :assam, :gujarat, :bihar, :arunachal_pradesh, :goa, :haryana, :himachal_predesh, :jammu_kashmir, :karnataka, :kerala, :madhya_pradesh, :maharashtra, :manipur, :meghalaya, :mizoram, :nagaland, :orissa, :punjab, :rajasthan, :sikkim, :tripura, :utter_pradesh, :west_bengal, :chattisgarh, :jharkhand, :uttarakhand, :andaman_nicobar, :chandigarh, :dadra_nagar, :daman_diu, :nct_of_delhi, :lakshadweep, :puducherry]
 end
