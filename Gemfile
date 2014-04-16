@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 gem 'rails', '4.1.0'
@@ -31,4 +31,4 @@ group :development do
 	gem "better_errors"
 end
 gem "binding_of_caller"
-gem 'carrierwave'
+gem "carrierwave"

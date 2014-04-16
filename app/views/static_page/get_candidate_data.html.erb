@@ -3,7 +3,7 @@
 		<div class="col-md-6 col-md-offset-3">
 			<div class="well well-sm">
 				<legend class="text-center">Enter the candidate details here, we will review and add it</legend>
-				<%= simple_form_for :candidate, :url => save_candidate_path, :method=> "get" do |f| %>
+				<%= simple_form_for :candidate, :url => save_candidate_path, html: { multipart: true } , :method=> "post" do |f| %>
 				<div class="field">
 					<%= f.input :name%>	
 				</div>
@@ -11,7 +11,7 @@
 					<%= f.input :age, as: :integer%>	
 				</div>
 <div class="field">
-					<%= f.file_field :avatar%>	
+					<%= f.input :avatar,as: :file%>	
 				</div>
 <div class="field">
 					<%= f.input :wikipedia_link%>	

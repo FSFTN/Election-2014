@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get 'static_page/about'
 	get 'static_page/get_candidate_data'
-	get "save_candidate" => "candidates#save_candidate"
+	post "save_candidate" => "candidates#save_candidate"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
