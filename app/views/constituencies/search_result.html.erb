@@ -2,18 +2,20 @@
   <% @candidates.each do |candidate| %>
   <ul class = "col-md-2 col-sm-3 col-xs-4">
     <li>
-      <% if candidate.avatar %>
-      <%= image_tag candidate.avatar,  class: "col-md-12 col-xs-12"%> 
+      <% if candidate.avatar.url %>
+      <%= image_tag candidate.avatar,  class: "avatar"%> 
       <% else %>
-      <%= image_tag "image_not_available.jpg", class: "col-md-12 col-xs-12" %>
+      <%= image_tag "image_not_available.jpg", class: "avatar" %>
       <% end %>
     </li> 
     <li class= "name">
+      <p>
       <%- if candidate.wikipedia_link %>
       <%= link_to candidate.name, candidate.wikipedia_link,  target: "_blank"%> 
       <% else %>
       <%= candidate.name %>
       <% end %>  
+      </p>
     </li>
     <li>
         <%= candidate.party.name%>  
