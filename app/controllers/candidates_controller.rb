@@ -1,5 +1,6 @@
 class CandidatesController < ApplicationController
 	before_action :set_candidate, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!
 
 
 	def save_candidate
@@ -11,7 +12,6 @@ class CandidatesController < ApplicationController
 				candidate.save!
 				candidate.constituencies << Constituency.find(candidate_params["constituency_id"])
 				Rails.logger.info "DONE@@@@@@@@@@@@@@@@@@@@@"
-				Rails.logger.info candidate.inspect
 				format.html { redirect_to static_page_get_candidate_data_path, notice: 'Candidate was successfully created.' }
 			else
 				format.html { redirect_to static_page_get_candidate_data_path, notice: 'Candidate was not successfully created.' }

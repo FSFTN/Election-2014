@@ -1,5 +1,6 @@
 class ConstituenciesController < ApplicationController
 	before_action :set_constituency, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, except: [:show, :search_result]
 
 	def search_result
 		# nil.test!

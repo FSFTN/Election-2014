@@ -5,8 +5,13 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-		<%= link_to "Election 2014" ,root_path, :class=>'navbar-brand'%>
+    <%= link_to "Election 2014" ,root_path, :class=>'navbar-brand'%>
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <% if admin_signed_in? %>
+        <li> <%= link_to "Logout", destroy_admin_session_path, method: 'delete'%></li>
+      <% end %>
+    </ul>
   </div>
 </div>

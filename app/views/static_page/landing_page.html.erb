@@ -1,14 +1,16 @@
-	<div class="col-md-12 col-sm-12 col-xs-12 search-container">
-		<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-				<legend class="text-center">Search for candidates based on their constituencies</legend>
-				<%= simple_form_for :search, :url => search_path, :method=> "get" do |f| %>
-        <div class="col-md-5 col-sm-12 col-xs-12">
-          <%= f.collection_select :state_id, State.order(:name),  :id, :name, {:include_blank=> "Select a State"}, {:class=>'dropdown'} %>
-        </div>
-        <div class="col-md-5 col-sm-12  col-xs-12">
-          <%= f.grouped_collection_select :constituency_id, State.order(:name), :constituencies, :name, :id, :name, {:include_blank=> "Select a Constituency"}, {:class=>'dropdown'} %>
-        </div>
-				<%= f.submit "Search", class: "btn btn-success col-md-2 col-sm-12 "%>
-				<% end %>
-		</div>
-	</div>
+<div class="col-md-12 col-sm-12 col-xs-12 search-container">
+  <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+    <legend class="text-center">Search for candidates based on their constituencies</legend>
+    <%= simple_form_for :search, :url => search_path, :method=> "get" do |f| %>
+    <div class="col-md-5 col-sm-12 col-xs-12 state">
+      <%= f.collection_select :state_id, State.order(:name),  :id, :name, {:include_blank=> "Select a State"}, {:class=>'dropdown'} %>
+    </div>
+    <div class="col-md-5 col-sm-12  col-xs-12 constituency">
+      <%= f.grouped_collection_select :constituency_id, State.order(:name), :constituencies, :name, :id, :name, {:include_blank=> "Select a Constituency"}, {:class=>'dropdown'} %>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit "Search", class: "btn btn-success search_button ", id: "search"%>
+    </div>
+    <% end %>
+  </div>
+</div>

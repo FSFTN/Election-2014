@@ -3,13 +3,12 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 read = ->
 	constituencies = $("#search_constituency_id").html()
-	console.log(constituencies)
+	#console.log(constituencies)
 	$("#search_state_id").change ->
-		console.log("test**************************************")
+		#console.log("test**************************************")
 		state = $("#search_state_id :selected").text()
 		console.log(state)
-		options = $(constituencies).filter("optgroup[label='#{state}']").html()
-		console.log(options)
+		#console.log(options)
 		if options
 			$("#search_constituency_id").html(options)
 		else
@@ -27,6 +26,6 @@ read = ->
 			$("#candidate_constituency_id").html(options1)
 		else
 			$("#candidate_constituency_id").empty()
-
+  
 $(document).ready read
 $(document).on "page:load", read
