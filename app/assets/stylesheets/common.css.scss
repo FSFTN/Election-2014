@@ -1,7 +1,7 @@
 //get candidate details page
 @import "bootstrap.min.css";
 .details-form{
-  input[type='text'], input[type='number']{
+  input[type='text'], input[type='number'],input[type='email'], input[type='password']{
     margin: 5px 0px;
     display: block;
     width: 100%;
