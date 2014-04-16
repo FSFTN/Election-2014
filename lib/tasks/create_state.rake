@@ -377,5 +377,5 @@ namespace :constituency do
 end
 
 namespace :db do
-  task :populate => ['create:states', 'constituency:all']
+  task :populate => ['create:states', 'create:parties', 'constituency:all']
 end
