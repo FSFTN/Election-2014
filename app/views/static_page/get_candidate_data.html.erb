@@ -1,39 +1,23 @@
-<div class="container">
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="well well-sm">
-				<legend class="text-center">Enter the candidate details here, we will review and add it</legend>
-				<%= simple_form_for :candidate, :url => save_candidate_path, html: { multipart: true } , :method=> "post" do |f| %>
-				<div class="field">
-					<%= f.input :name%>	
-				</div>
-<div class="field">
-					<%= f.input :age, as: :integer%>	
-				</div>
-<div class="field">
-					<%= f.input :avatar,as: :file%>	
-				</div>
-<div class="field">
-					<%= f.input :wikipedia_link%>	
-				</div>
+<div class="container details-form">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well well-sm">
+        <legend class="text-center">Enter the candidate details here, we will review and add it</legend>
+        <%= simple_form_for :candidate, :url => save_candidate_path, :method=> "post", :multipart => true do |f| %>
+          <%= f.input :name , required: true %>	
+          <%= f.input :age, as: :integer%>	
+          <%= f.file_field :avatar%>	
+          <%= f.input :wikipedia_link%>	
 
-				<div class="field">
-					<%= f.collection_select :state_id, State.order(:name),  :id, :name, {:include_blank=> "Select a State"}, {:class=>'dropdown state_selection'} %>
-				</div>
-				<div class="field">
-					<%= f.grouped_collection_select :constituency_id, State.order(:name), :constituencies, :name, :id, :name, {:include_blank=> "Select a City"}, {:class=>'dropdown'} %>
-				</div>
-	<div class="field">
-					<%= f.collection_select :party, Party.order(:name), :id, :name, {:include_blank=> "Select a Party"}, {:class=>'dropdown'} %>
-				</div>
+          <%= f.collection_select :state_id, State.order(:name),  :id, :name, {:include_blank=> "Select a State"}, {:class=>'dropdown state_selection'} %>
+          <%= f.grouped_collection_select :constituency_id, State.order(:name), :constituencies, :name, :id, :name, {:include_blank=> "Select a City"}, {:class=>'dropdown'}%>
+          <%= f.collection_select :party, Party.order(:name), :id, :name, {:include_blank=> "Select a Party"}, {:class=>'dropdown'} %>
 
-				<div class="field">
-					<%= f.submit "Add Candidate Data", class: "btn btn-success form-control control-group"%>
-				</div>
-				<% end %>
-			</div>
-		</div>
-	</div>
+          <%= f.submit "Add Candidate Data", class: "btn btn-success form-control "%>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
 

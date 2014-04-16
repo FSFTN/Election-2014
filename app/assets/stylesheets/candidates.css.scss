@@ -1,3 +1,31 @@
 // Place all the styles related to the candidates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  height: 100%;
+}
+#search_result{
+  ul{
+    list-style-type: none;
+    font-size: 16px;
+    height: 300px;
+    border-color: #dce4ec;
+    border-style: solid;
+    border-width: 2px 1px;
+  }
+  li{
+    margin: 22px 0px;
+    text-align: center;
+  }
+  img{
+    margin-bottom: 10%;
+  }
+  .col-xs-4{
+  }
+  .name{
+    font-size:  20px; 
+  }
+  .avatar{
+    width: 50%;
+  }
+}

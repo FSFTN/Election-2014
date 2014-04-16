@@ -1,38 +1,31 @@
-<table id= "search_result" class = "table table-hover">
-	<thead>
-		<tr>
-			<th>Candidate Name</th>
-			<th>Candidate Age</th>
-			<th>Party Name</th>
-			<th>Wikipedia link if any</th>
-			<th>Party's Manifesto</th>
-		</tr>
-	</thead>
-
-	<tbody>
-		<% @candidates.each do |candidate| %>
-		<tr>
-			<td>
-				<%= link_to candidate.name, candidate_path(candidate.id) %>
-			</td>
-			<%- if candidate.age %>
-			<td><%= candidate.age%></td>
-			<% else %>
-			<td></td>
-			<% end %>
-			<td><%= candidate.party.name%></td>
-			<%- if candidate.wikipedia_link %>
-			<td><%= candidate.wikipedia_link%></td>
-			<% else %>
-			<td></td>
-			<% end %>
-			<%- if candidate.party.manifesto %>
-			<td><%= candidate.party.manifesto%></td>
-			<% else %>
-			<td></td>
-			<% end %>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
-
+<div id= "search_result" class="col-md-12 col-xs-12">
+  <% @candidates.each do |candidate| %>
+  <ul class = "col-md-2 col-sm-3 col-xs-4">
+    <li>
+      <% if candidate.avatar.url %>
+      <%= image_tag candidate.avatar,  class: "avatar"%> 
+      <% else %>
+      <%= image_tag "image_not_available.jpg", class: "avatar" %>
+      <% end %>
+    </li> 
+    <li class= "name">
+      <p>
+      <%- if candidate.wikipedia_link %>
+      <%= link_to candidate.name, candidate.wikipedia_link,  target: "_blank"%> 
+      <% else %>
+      <%= candidate.name %>
+      <% end %>  
+      </p>
+    </li>
+    <li>
+        <%= candidate.party.name%>  
+    </li>
+    <li>
+      <%- if candidate.party.manifesto %>
+      <%= link_to "Manifesto", candidate.party.manifesto, target: "_blank"%>
+      <% else %>
+      <% end %> 
+    </li>
+  </ul> 
+  <% end %>
+</div>
