@@ -5,14 +5,18 @@
 // landing page css
 
 .search-container{
-  margin-top: 3%;
+  /*margin-top: 3%;*/
 }
 .welcome{
-  margin-top: 8%;
+  margin-top: 4%;
+  font-size: 4em;
+  font-weight:bold;
+  margin-bottom: 2%;
 }
 .explanation{
-  margin-top: 17%;
-  legend{
+  /*margin-top: 17%;*/
+  margin-bottom: 3%;
+  p{
     font-size: 20px;
   }
 }
@@ -43,4 +47,11 @@
   margin-bottom: 25px;
 }
 
-
+.well-sm{
+  label{
+    color: #2c3e50;
+  }
+}
+.others{
+  margin-top: 30px;
+}

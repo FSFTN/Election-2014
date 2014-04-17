@@ -15,15 +15,15 @@
     </li> 
     <li class= "name">
       <p>
-      <%- if candidate.wikipedia_link %>
-      <%= link_to candidate.name, candidate.wikipedia_link,  target: "_blank"%> 
-      <% else %>
-      <%= candidate.name %>
-      <% end %>  
+        <%- if candidate.wikipedia_link %>
+        <%= link_to candidate.name, candidate.wikipedia_link,  target: "_blank"%> 
+        <% else %>
+        <%= candidate.name %>
+        <% end %>  
       </p>
     </li>
     <li>
-        <%= candidate.party.name%>  
+      <%= candidate.party.name%>  
     </li>
     <li>
       <%- if candidate.party.manifesto %>

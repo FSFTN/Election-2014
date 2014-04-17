@@ -6,7 +6,7 @@
         <%= simple_form_for :candidate, :url => save_candidate_path, :method=> "post", :multipart => true do |f| %> 
         <%= f.input :name , required: true %>	
         <%# f.input :age, as: :integer%>	
-        <span class="string required control-label" style="font-weight: bold">Avatar</span>
+        <span class="string required control-label" style="font-weight: bold; color: #2c3e50;">Avatar</span>
         <%= f.file_field :avatar%>	
         <%= f.input :wikipedia_link%>	
 

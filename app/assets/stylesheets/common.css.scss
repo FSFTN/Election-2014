@@ -17,7 +17,7 @@ footer {
   height: 20px;
 }
 body{
-  background-image: image-url('bg3.jpg');
+  /*background-image: image-url('bg3.jgp');*/
 }
 .details-form{
   input[type='text'], input[type='number'],input[type='email'], input[type='password']{
@@ -48,3 +48,20 @@ body{
   }
 }
 
+.home{
+  padding: 4em 0 2em;
+  background-color: #1c2533;
+  background: -webkit-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+  background: -o-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+  background: -ms-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+  background: -moz-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+  /* background: linear-gradient(20deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%); */
+  background-attachment: fixed;
+  color: #fff;
+}
+.navbar{
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+#search_result{
+}
