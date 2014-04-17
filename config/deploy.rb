@@ -22,7 +22,7 @@ set :scm, :git
 
 # Default value for :pty is false
 set :pty, true
-
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 # Default value for :linked_files is []
 #set :linked_files, %w{config/database.yml}
 
