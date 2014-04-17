@@ -12,6 +12,8 @@ $(document).ready ->
     #else
       #$("#search").prop("disabled",false)
 
-    $('#search_constituency_id').on "change", ->
+    $('#search_state_id').on "change", ->
+       #s=$('#search_constituency_id :selected').text()
+       #alert(s)
       $('#search').removeClass("disabled")
   

@@ -9,12 +9,13 @@ class CandidatesController < ApplicationController
 		respond_to do |format|
 			if candidate.save!
 				candidate.avatar =  candidate_params["avatar"]
-				candidate.save!
-				candidate.constituencies << Constituency.find(candidate_params["constituency_id"])
+        candidate.wikipedia_link = candidate_params['wikipedia_link']
+        candidate.save!
+				candidate.constituencies << Constituency.find(candidate_params["constituency_id"]) 
 				Rails.logger.info "DONE@@@@@@@@@@@@@@@@@@@@@"
-				format.html { redirect_to static_page_get_candidate_data_path, notice: 'Candidate was successfully created.' }
+				format.html { redirect_to add_candidate_path, notice: 'Candidate was successfully created.' }
 			else
-				format.html { redirect_to static_page_get_candidate_data_path, notice: 'Candidate was not successfully created.' }
+				format.html { redirect_to add_candidate_path, notice: 'Candidate was not successfully created.' }
 			end
 		end
 	end
