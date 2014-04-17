@@ -23,7 +23,7 @@ gem 'spring',        group: :development
 
 gem 'capistrano',  '~> 3.1'
 gem 'capistrano-rails', '~> 1.1'
-
+gem 'rvm-capistrano'
 
 gem 'devise'
 gem "select2-rails"

@@ -1,5 +1,6 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
+require "rvm/capistrano"
 
 set :application, 'Election-2014'
 set :repo_url, 'git@github.com:FSFTN/Election-2014.git'
@@ -32,7 +33,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
+#set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
 namespace :deploy do
 
   desc 'Restart application'
