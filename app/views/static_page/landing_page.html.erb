@@ -9,7 +9,7 @@
       <%= f.grouped_collection_select :constituency_id, State.order(:name), :constituencies, :name, :id, :name, {:include_blank=> "Select a Constituency"}, {:class=>'dropdown'} %>
     </div>
     <div class="col-md-2">
-      <%= f.submit "Search", class: "btn btn-success search_button ", id: "search"%>
+      <%= f.submit "Search", class: "btn btn-success search_button disabled", id: "search"%>
     </div>
     <% end %>
   </div>
