@@ -22,7 +22,7 @@ set :scm, :git
 
 # Default value for :pty is false
 set :pty, true
-set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+#set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 # Default value for :linked_files is []
 #set :linked_files, %w{config/database.yml}
 
@@ -33,7 +33,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-#set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
+set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
 namespace :deploy do
 
   desc 'Restart application'
