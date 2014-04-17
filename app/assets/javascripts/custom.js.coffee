@@ -4,6 +4,9 @@ $ ->
   ), 1000
 
 $(document).ready ->
+  #$('.navbar-brand').click ->
+    #$('#search').prop('disabled','true')
+    #alert 'afasd'
   #$("#search").on "change", ->
     #a = $('#search_state_id :selected').text()
     #console.log "#{a} 88888888888"
@@ -12,8 +15,8 @@ $(document).ready ->
     #else
       #$("#search").prop("disabled",false)
 
-    $('#search_state_id').on "change", ->
+    #$('#search_state_id').on "change", ->
        #s=$('#search_constituency_id :selected').text()
        #alert(s)
-      $('#search').removeClass("disabled")
+      #$('#search').removeClass("disabled")
   

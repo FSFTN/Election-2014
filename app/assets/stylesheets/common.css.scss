@@ -1,5 +1,24 @@
 //get candidate details page
 @import "bootstrap.min.css";
+
+html, body {
+  height: 100%;
+}
+footer {
+  padding: 17px 0 18px 0;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -63px;
+}
+.push {
+  height: 20px;
+}
+body{
+  background-image: image-url('bg3.jpg');
+}
 .details-form{
   input[type='text'], input[type='number'],input[type='email'], input[type='password']{
     margin: 5px 0px;
