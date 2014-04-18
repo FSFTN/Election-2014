@@ -23,7 +23,7 @@ gem 'spring',        group: :development
 
 gem 'capistrano',  '~> 3.1'
 gem 'capistrano-rails', '~> 1.1'
-
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 gem 'devise'
 gem "select2-rails"
@@ -33,3 +33,4 @@ group :development do
 end
 gem "binding_of_caller"
 gem "carrierwave"
+gem 'meta-tags'
