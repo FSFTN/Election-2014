@@ -19,4 +19,3 @@ $(document).ready ->
        #s=$('#search_constituency_id :selected').text()
        #alert(s)
       #$('#search').removeClass("disabled")
-  
