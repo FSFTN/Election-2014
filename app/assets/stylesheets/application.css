@@ -12,8 +12,9 @@
  *
  *= require select2
  *= require_tree .
+ *= require dataTables/jquery.dataTables.bootstrap3
  *= require_self
  */
 /*.navbar{*/
-  /*margin-bottom: 0px;*/
+/*margin-bottom: 0px;*/
 /*}*/

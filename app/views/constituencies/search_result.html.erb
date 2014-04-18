@@ -5,12 +5,12 @@
 </ul> -->
 <div id= "search_result" class="col-md-12 col-xs-12">
   <% @candidates.each do |candidate| %>
-  <ul class = "col-md-2 col-sm-4 col-xs-6">
-    <li>
+  <ul class = "col-md-2 col-sm-4 col-xs-6" >
+    <li style="height: 35%">
       <% if candidate.avatar.url %>
       <%= image_tag candidate.avatar,  class: "avatar"%> 
       <% else %>
-      <%= image_tag "image_not_available.jpg", class: "avatar" %>
+      <%= image_tag "no_profile_image.jpg", class: "avatar" %>
       <% end %>
     </li> 
     <li class= "name">
