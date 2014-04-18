@@ -6,9 +6,13 @@ class ConstituenciesController < ApplicationController
 	def search_result
 		# nil.test!
 		constituency_id = search_params["constituency_id"]
-		constituency = Constituency.find(constituency_id)
+    if constituency_id.empty?
+      redirect_to root_path
+    else
+      constituency = Constituency.find(constituency_id)
 		@candidates = constituency.candidates
 		Rails.logger.info @candidates.inspect
+    end
 	end
 
 	# GET /constituencies
