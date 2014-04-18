@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Election2014</title>
+    <%=  display_meta_tags :site => 'Knowb4uVote', 
+    :description => 'This Election Season, are you confused with all the news? Are you looking for a one-stop source of information? Want to find out what each candidate stands for in their manifestos? Your search ends here.',
+    :keywords => 'election, candidates, vote, constituency, politics, fsftn, knowb4uvote', 
+    cononical: "http://www.knowb4uvote.in/", 
+    author: "http://github.com/rajanand02", 
+    publisher: 'http://fsftn.org/' %>
+    <%= display_meta_tags :og => { title: "Knowb4uVote", description: "This Election Season, are you confused with all the news? Are you looking for a one-stop source of information? Want to find out what each candidate stands for in their manifestos? Your search ends here." } %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= favicon_link_tag 'logo.png', type: "image/png" %>
+    <meta property="og:image" content=" <%= asset_path('og_image.png') %>"/>
     <%= csrf_meta_tags %>
   </head>
   <body>
