@@ -17,7 +17,7 @@
 </div>
 <div class="field">
 	<%= f.label :state_id %><br>
-	<%= f.text_field :state_id %>
+	<%# f.text_field :state_id %>
 </div>
 <div class="field">
 	<%= f.label :wikipedia_link %><br>
@@ -26,7 +26,8 @@
 <div class="field">
 	<%= f.input :state, collection: State.all%>
 </div>
+<br />
 <div class="actions">
-	<%= f.submit %>
+	<%= f.submit class: "btn btn-success"%>
 </div>
 <% end %>

@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
 	before_action :set_party, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
+  layout 'others'
 
 	# GET /parties
 	# GET /parties.json

@@ -1,7 +1,7 @@
 class CandidatesController < ApplicationController
 	before_action :set_candidate, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
-
+  layout 'others'
 
 	def save_candidate
 		party = Party.find(candidate_params["party"])
