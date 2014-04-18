@@ -1,6 +1,5 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
-require "rvm/capistrano"
 
 set :application, 'Election-2014'
 set :repo_url, 'git@github.com:FSFTN/Election-2014.git'
