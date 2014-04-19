@@ -5,6 +5,7 @@ gem 'rails', '4.1.0'
 group :development do
   gem 'sqlite3'
   gem 'guard-livereload', require: false
+  gem "better_errors"
 end
 group :production do
  gem 'pg' 
@@ -28,9 +29,7 @@ gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-ra
 gem 'devise'
 gem "select2-rails"
 gem 'simple_form'
-group :development do
-	gem "better_errors"
-end
 gem "binding_of_caller"
 gem "carrierwave"
 gem 'meta-tags'
+gem 'jquery-ui-rails'
