@@ -11,8 +11,10 @@
  * file per style scope.
  *
  *= require select2
- *= require_tree .
+ *= require dataTables/jquery.dataTables
+ *= require jquery.ui.all
  *= require dataTables/jquery.dataTables.bootstrap3
+ *= require_tree .
  *= require_self
  */
 /*.navbar{*/
